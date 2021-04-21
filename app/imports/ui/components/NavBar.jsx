@@ -13,11 +13,28 @@ class NavBar extends React.Component {
     return (
       <Menu style={menuStyle} attached="top" borderless inverted>
         <Menu.Item as={NavLink} activeClassName="" exact to="/">
-          <Header inverted as='h1'>meteor-application-template</Header>
+          <Header inverted as='h1'>Medical Tracker</Header>
         </Menu.Item>
+        <Menu.Item as={NavLink} activeClassName="" exact to="/" key='home'>Home</Menu.Item>
         {this.props.currentUser ? (
-          [<Menu.Item as={NavLink} activeClassName="active" exact to="/add" key='add'>Add Stuff</Menu.Item>,
-            <Menu.Item as={NavLink} activeClassName="active" exact to="/list" key='list'>List Stuff</Menu.Item>]
+          [<Menu.Item key='menu-notification'>
+            <Dropdown id="login-dropdown" text="Notifications" pointing="top right" key='notifications'>
+              <Dropdown.Menu>
+                <Dropdown.Item id="add-dropdown-notification" icon="user" text="Add" as={NavLink} exact to="/add-notification"/>
+                <Dropdown.Item id="edit-dropdown-notification" icon="add user" text="Edit" as={NavLink} exact to="/edit-notification"/>
+              </Dropdown.Menu>
+            </Dropdown>
+          </Menu.Item>,
+          <Menu.Item key='menu-records'>
+            <Dropdown id="login-dropdown" text="Patient Records" pointing="top right" key='patient-records'>
+              <Dropdown.Menu>
+                <Dropdown.Item id="add-dropdown-account" icon="user" text="Add Account" as={NavLink} exact to="/add-account"/>
+                <Dropdown.Item id="edit-dropdown-account" icon="add user" text="Edit Account" as={NavLink} exact to="/edit-account"/>
+                <Dropdown.Item id="dropdown-treatment-log" icon="add user" text="Treatment Log" as={NavLink} exact to="/treatment-log"/>
+              </Dropdown.Menu>
+            </Dropdown>
+          </Menu.Item>,
+          ]
         ) : ''}
         {Roles.userIsInRole(Meteor.userId(), 'admin') ? (
           <Menu.Item as={NavLink} activeClassName="active" exact to="/admin" key='admin'>Admin</Menu.Item>
