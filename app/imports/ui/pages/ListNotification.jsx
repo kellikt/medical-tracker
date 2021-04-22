@@ -14,8 +14,8 @@ class ListNotification extends React.Component {
           <Message.Header>Note for Prototype Purposes</Message.Header>
           <p>
             This page is supposed to auto-populate data when the submit button is pressed and a valid patient ID is entered.
-            Since the back-end is not implemented yet, pressing submit will populate an example list of notifications.
-            Please press the submit button once to show the example list of notifications that you can edit.
+            Since the back-end is not implemented yet, an example list of notifications is listed below.
+            Please press the Edit link to go to the Edit Notification page.
           </p>
         </Message>
         <Input action='Submit' placeholder='Enter Patient ID' />

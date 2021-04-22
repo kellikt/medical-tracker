@@ -20,17 +20,17 @@ class NavBar extends React.Component {
           [<Menu.Item key='menu-notification'>
             <Dropdown id="login-dropdown" text="Notifications" pointing="top right" key='notifications'>
               <Dropdown.Menu>
-                <Dropdown.Item id="add-dropdown-notification" icon="user" text="Add" as={NavLink} exact to="/add-notification"/>
-                <Dropdown.Item id="list-dropdown-notification" icon="add user" text="List" as={NavLink} exact to="/list-notification"/>
+                <Dropdown.Item id="add-dropdown-notification" icon="add" text="Add" as={NavLink} exact to="/add-notification"/>
+                <Dropdown.Item id="list-dropdown-notification" icon="list" text="List" as={NavLink} exact to="/list-notification"/>
               </Dropdown.Menu>
             </Dropdown>
           </Menu.Item>,
           <Menu.Item key='menu-records'>
             <Dropdown id="login-dropdown" text="Patient Records" pointing="top right" key='patient-records'>
               <Dropdown.Menu>
-                <Dropdown.Item id="add-dropdown-account" icon="user" text="Add Account" as={NavLink} exact to="/add-account"/>
-                <Dropdown.Item id="edit-dropdown-account" icon="add user" text="Edit Account" as={NavLink} exact to="/edit-account"/>
-                <Dropdown.Item id="dropdown-treatment-log" icon="add user" text="Treatment Log" as={NavLink} exact to="/treatment-log"/>
+                <Dropdown.Item id="add-dropdown-account" icon="add user" text="Add Account" as={NavLink} exact to="/add-account"/>
+                <Dropdown.Item id="edit-dropdown-account" icon="edit" text="Edit Account" as={NavLink} exact to="/edit-account"/>
+                <Dropdown.Item id="dropdown-treatment-log" icon="list" text="Treatment Log" as={NavLink} exact to="/treatment-log"/>
               </Dropdown.Menu>
             </Dropdown>
           </Menu.Item>,
