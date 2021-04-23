@@ -39,8 +39,8 @@ class App extends React.Component {
             <ProtectedRoute path="/edit-notification" component={EditNotification}/>
             <ProtectedRoute path="/list-notification" component={ListNotification}/>
             <ProtectedRoute path="/add-account" component={AddPatient}/>
-			<ProtectedRoute path="/edit-account" component={EditPatient}/>
-			<ProtectedRoute path="/treatment-log" component={TreatmentLog}/>
+            <ProtectedRoute path="/edit-account" component={EditPatient}/>
+			      <ProtectedRoute path="/treatment-log" component={TreatmentLog}/>
             <AdminProtectedRoute path="/admin" component={ListStuffAdmin}/>
             <Route component={NotFound}/>
           </Switch>
