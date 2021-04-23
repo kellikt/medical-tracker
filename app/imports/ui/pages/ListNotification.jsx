@@ -1,9 +1,14 @@
 import React from 'react';
 import { Container, Table, Header, Input, Message } from 'semantic-ui-react';
+import swal from 'sweetalert';
 import NotificationItem from '../components/NotificationItem';
 
 /** Renders a table containing all of the Notification documents. Use <NotificationItem> to render each row. */
 class ListNotification extends React.Component {
+
+  submitID() {
+    swal('Success', 'This should populate the list notification table with a list of active notifications for the patient associated with the inputted patient ID.', 'success');
+  }
 
   // Render the page once subscriptions have been received.
   render() {
@@ -18,7 +23,7 @@ class ListNotification extends React.Component {
             Please press the Edit link to go to the Edit Notification page.
           </p>
         </Message>
-        <Input action='Submit' placeholder='Enter Patient ID' />
+        <Input action={{ content: 'Submit', onClick: () => this.submitID() }} placeholder='Enter Patient ID' />
         <Table celled>
           <Table.Header>
             <Table.Row>

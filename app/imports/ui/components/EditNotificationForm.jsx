@@ -30,7 +30,7 @@ class EditNotificationForm extends Component {
         <Form.Group inline>
           <label>Send Time</label>
           <TimePicker onChange={this.onChange} defaultOpenValue={moment('00:00:00', 'HH:mm:ss')} />
-          <label>Date Range</label>
+          <label style={{ padding: '0px 0px 0px 30px' }}>Date Range</label>
           <RangePicker />
         </Form.Group>
         <Form.Group inline>
