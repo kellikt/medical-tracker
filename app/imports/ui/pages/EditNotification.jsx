@@ -1,15 +1,11 @@
 import React from 'react';
 import { Grid, Loader, Header, Segment } from 'semantic-ui-react';
-import swal from 'sweetalert';
-import { Form, ErrorsField, HiddenField, NumField, SelectField, SubmitField, TextField } from 'uniforms-semantic';
 import { Meteor } from 'meteor/meteor';
 import { withTracker } from 'meteor/react-meteor-data';
 import PropTypes from 'prop-types';
 import SimpleSchema2Bridge from 'uniforms-bridge-simple-schema-2';
 import { Stuffs } from '../../api/stuff/Stuff';
 import EditNotificationForm from '../components/EditNotificationForm';
-
-const bridge = new SimpleSchema2Bridge(Stuffs.schema);
 
 /** Renders the Page for editing a single document. */
 class EditNotification extends React.Component {

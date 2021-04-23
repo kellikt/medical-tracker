@@ -1,15 +1,10 @@
 import React from 'react';
 import { Grid, Loader, Header, Segment } from 'semantic-ui-react';
-import swal from 'sweetalert';
-import { Form, ErrorsField, HiddenField, NumField, SelectField, SubmitField, TextField } from 'uniforms-semantic';
 import { Meteor } from 'meteor/meteor';
 import { withTracker } from 'meteor/react-meteor-data';
 import PropTypes from 'prop-types';
-import SimpleSchema2Bridge from 'uniforms-bridge-simple-schema-2';
 import { Stuffs } from '../../api/stuff/Stuff';
-import EditNotificationForm from '../components/EditNotificationForm';
-
-const bridge = new SimpleSchema2Bridge(Stuffs.schema);
+import AddNotificationForm from '../components/AddNotificationForm';
 
 /** Renders the Page for adding a single document. */
 class AddNotification extends React.Component {
@@ -31,7 +26,7 @@ class AddNotification extends React.Component {
         <Grid.Column>
           <Header as="h2" textAlign="center">Add Notification</Header>
           <Segment>
-            <EditNotificationForm/>
+            <AddNotificationForm/>
           </Segment>
         </Grid.Column>
       </Grid>
