@@ -23,7 +23,7 @@ class TreatmentLog extends React.Component {
               This page is supposed to auto-populate data when the submit button is pressed and a valid patient ID is entered. Since the back-end is not implemented yet, pressing submit will populate an example log of a patient. Please press the submit button once to show the example treatment plan and example log of a patient.
           </p>
         </Message>
-        <Input action={{ icon: 'search', onClick: () => this.submitID() }} placeholder='Enter Patient ID' />
+        <Input action={{ color: 'blue', icon: 'search', onClick: () => this.submitID() }} placeholder='Enter Patient ID' />
         <Header as="h3" textAlign="center">Patient Treatment Plan</Header>
         <Table celled>
           <Table.Header>

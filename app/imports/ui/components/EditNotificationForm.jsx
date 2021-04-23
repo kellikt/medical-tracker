@@ -62,7 +62,7 @@ class EditNotificationForm extends Component {
           label='Description'
           placeholder='Enter medical instructions from provider'
         />
-        <Form.Field control={Button}>Update Notification</Form.Field>
+        <Form.Field control={Button} color='blue'>Update Notification</Form.Field>
       </Form>
     );
   }

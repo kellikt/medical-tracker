@@ -64,7 +64,7 @@ class AddNotificationForm extends Component {
           label='Description'
           placeholder='Enter medical instructions from provider'
         />
-        <Form.Field control={Button}>Add New Notification</Form.Field>
+        <Form.Field control={Button} color='blue'>Add New Notification</Form.Field>
       </Form>
     );
   }
