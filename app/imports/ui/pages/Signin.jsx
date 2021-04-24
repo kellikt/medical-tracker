@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { Link, Redirect } from 'react-router-dom';
 import { Meteor } from 'meteor/meteor';
 import { Container, Form, Grid, Header, Message, Segment } from 'semantic-ui-react';
-
+import RedCrossImage from '../components/RedCrossImage';
 /**
  * Signin page overrides the form’s submit event and call Meteor’s loginWithPassword().
  * Authentication errors modify the component’s state to be displayed
@@ -45,19 +45,22 @@ export default class Signin extends React.Component {
       <Container id="signin-page">
         <Grid textAlign="center" verticalAlign="middle" centered columns={2}>
           <Grid.Column>
+            <RedCrossImage/>
+          </Grid.Column>
+          <Grid.Column>
             <Header as="h2" textAlign="center">
-              Login to your account
+              Login
             </Header>
             <Form onSubmit={this.submit}>
               <Segment stacked>
                 <Form.Input
-                  label="Email"
+                  label="Username"
                   id="signin-form-email"
                   icon="user"
                   iconPosition="left"
                   name="email"
                   type="email"
-                  placeholder="E-mail address"
+                  placeholder="Username"
                   onChange={this.handleChange}
                 />
                 <Form.Input
@@ -74,7 +77,7 @@ export default class Signin extends React.Component {
               </Segment>
             </Form>
             <Message>
-              <Link to="/signup">Click here to Register</Link>
+              <Link to="/signup">Make an Account</Link>
             </Message>
             {this.state.error === '' ? (
               ''
