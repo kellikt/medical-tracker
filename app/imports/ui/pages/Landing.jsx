@@ -1,6 +1,6 @@
 import React from 'react';
 import { Form, Grid, Header, Message } from 'semantic-ui-react';
-import { Link, withRouter, } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { Meteor } from 'meteor/meteor';
 import { withTracker } from 'meteor/react-meteor-data';
@@ -80,9 +80,13 @@ class Landing extends React.Component {
             </Grid.Row>,
           ]
         ) :
-          [<h1 key='log-in'>Please Log In</h1>,
-            <Form.Button color="blue" key='form-log-in' id="log in" content="Log In"/>,
-            <Link key='link-log-in' to="/login">Button will Link to Log In Page</Link>,
+          [<Grid.Column key='log-in' textAlign="center">
+            <Header size="huge">Please Log In</Header>
+            <Message>
+              <p>This website is for authorized use by medical administrators or professionals only. You must log in before accessing this website.</p>
+            </Message>
+            <Link key='link-log-in' to="/login"><Form.Button size="massive" color="blue" key='form-log-in' id="log in" content="Log In"/></Link>
+          </Grid.Column>,
           ]
         }
       </Grid>

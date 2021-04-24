@@ -8,10 +8,9 @@ class Footer extends React.Component {
       <footer>
         <div style={divStyle} className="ui center aligned container">
           <hr />
-              Department of Information and Computer Sciences <br />
-              University of Hawaii<br />
-              Honolulu, HI 96822 <br />
-          <a href="http://ics-software-engineering.github.io/meteor-application-template-react">Template Home Page</a>
+              ICS 464 Team Project<br />
+              Team Members: Rusty Jacinto, Sun Young Kim, Len Nguyen, Joel Sikkink, and Kelli Tamashiro<br />
+          <a href="https://github.com/kellikt/medical-tracker">GitHub Page</a>
         </div>
       </footer>
     );
