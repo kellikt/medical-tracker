@@ -20,7 +20,7 @@ import AddPatient from '../pages/AddPatient';
 import ListNotification from '../pages/ListNotification';
 import EditPatient from '../pages/EditPatient';
 import TreatmentLog from '../pages/TreatmentLog';
-import AddNotification from "../pages/AddNotification";
+import AddNotification from '../pages/AddNotification';
 import LoggedInLanding from '../pages/LoggedInLanding';
 
 /** Top-level layout component for this application. Called in imports/startup/client/startup.jsx. */

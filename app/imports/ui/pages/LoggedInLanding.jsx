@@ -20,19 +20,19 @@ class LoggedInLanding extends React.Component {
 
               <Link to="/add-account">New Patient?</Link>
 
-            <p></p>
+            <br/>
             <p>
               Notifications
             </p>
             <Form.Button id="add-notif" content="ADD"/>
-            <p></p>
+            <br/>
             <Form.Button id="edit-notif" content="EDIT"/>
-            <p></p>
+            <br/>
 
             <p></p>
             <p>Records</p>
             <Form.Button id="account" content="Acount"/>
-            <p></p>
+            <br/>
             <Form.Button id="treatment-log" content="Treatment Log"/>
           </Grid.Column>
 
