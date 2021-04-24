@@ -21,6 +21,7 @@ import ListNotification from '../pages/ListNotification';
 import EditPatient from '../pages/EditPatient';
 import TreatmentLog from '../pages/TreatmentLog';
 import AddNotification from "../pages/AddNotification";
+import LoggedInLanding from '../pages/LoggedInLanding';
 
 /** Top-level layout component for this application. Called in imports/startup/client/startup.jsx. */
 class App extends React.Component {
@@ -31,7 +32,7 @@ class App extends React.Component {
           <NavBar/>
           <Switch>
             <Route exact path="/" component={Landing}/>
-            <Route path="/signin" component={Signin}/>
+            <Route path="/login" component={Signin}/>
             <Route path="/signup" component={Signup}/>
             <Route path="/signout" component={Signout}/>
             <ProtectedRoute path="/list" component={ListStuff}/>
@@ -42,7 +43,8 @@ class App extends React.Component {
             <ProtectedRoute path="/list-notification" component={ListNotification}/>
             <ProtectedRoute path="/add-account" component={AddPatient}/>
             <ProtectedRoute path="/edit-account" component={EditPatient}/>
-			<ProtectedRoute path="/treatment-log" component={TreatmentLog}/>
+            <ProtectedRoute path="/treatment-log" component={TreatmentLog}/>
+            <ProtectedRoute path="/logged-in" component={LoggedInLanding}/>
             <AdminProtectedRoute path="/admin" component={ListStuffAdmin}/>
             <Route component={NotFound}/>
           </Switch>
@@ -65,7 +67,7 @@ const ProtectedRoute = ({ component: Component, ...rest }) => (
       const isLogged = Meteor.userId() !== null;
       return isLogged ?
         (<Component {...props} />) :
-        (<Redirect to={{ pathname: '/signin', state: { from: props.location } }}/>
+        (<Redirect to={{ pathname: '/logged-in', state: { from: props.location } }}/>
         );
     }}
   />
