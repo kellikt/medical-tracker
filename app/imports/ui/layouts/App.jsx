@@ -19,6 +19,7 @@ import EditNotification from '../pages/EditNotification';
 import AddPatient from '../pages/AddPatient';
 import EditPatient from '../pages/EditPatient';
 import TreatmentLog from '../pages/TreatmentLog';
+import LoggedInLanding from '../pages/LoggedInLanding';
 
 /** Top-level layout component for this application. Called in imports/startup/client/startup.jsx. */
 class App extends React.Component {
@@ -39,6 +40,7 @@ class App extends React.Component {
             <ProtectedRoute path="/add-account" component={AddPatient}/>
             <ProtectedRoute path="/edit-account" component={EditPatient}/>
             <ProtectedRoute path="/treatment-log" component={TreatmentLog}/>
+            <ProtectedRoute path="/logged-in" component={LoggedInLanding}/>
             <AdminProtectedRoute path="/admin" component={ListStuffAdmin}/>
             <Route component={NotFound}/>
           </Switch>
