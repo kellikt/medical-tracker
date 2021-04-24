@@ -63,7 +63,7 @@ const ProtectedRoute = ({ component: Component, ...rest }) => (
       const isLogged = Meteor.userId() !== null;
       return isLogged ?
         (<Component {...props} />) :
-        (<Redirect to={{ pathname: '/signin', state: { from: props.location } }}/>
+        (<Redirect to={{ pathname: '/logged-in', state: { from: props.location } }}/>
         );
     }}
   />
