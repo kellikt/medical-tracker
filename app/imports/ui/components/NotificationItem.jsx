@@ -7,11 +7,11 @@ class StuffItem extends React.Component {
   render() {
     return (
       <Table.Row>
-        <Table.Cell>03/31/2021</Table.Cell>
-        <Table.Cell>03/31/2022</Table.Cell>
-        <Table.Cell>8:00 AM</Table.Cell>
-        <Table.Cell>Weekly</Table.Cell>
-        <Table.Cell>Take Pill A</Table.Cell>
+        <Table.Cell>05/01/2021</Table.Cell>
+        <Table.Cell>05/31/2021</Table.Cell>
+        <Table.Cell>5:00 PM</Table.Cell>
+        <Table.Cell>Daily</Table.Cell>
+        <Table.Cell>Take 1 Vicodin tablet, avoid drinking alcohol and taking sedative medication</Table.Cell>
         <Table.Cell>
           <Link to={'/edit-notification'}>Edit <Icon name='edit'/></Link>
         </Table.Cell>
