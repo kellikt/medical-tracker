@@ -31,7 +31,7 @@ class AddNotificationForm extends Component {
           <label>Patient ID</label>
           <Form.Input placeholder='Enter Patient ID Number' width={4} />
           <label>Send Time</label>
-          <TimePicker onChange={this.onChange} defaultOpenValue={moment('00:00:00', 'HH:mm:ss')} />
+          <TimePicker use12Hours format="h:mm a" onChange={this.onChange} defaultOpenValue={moment('00:00:00', 'HH:mm:ss')} />
           <label style={{ padding: '0px 0px 0px 30px' }}>Date Range</label>
           <RangePicker />
         </Form.Group>
