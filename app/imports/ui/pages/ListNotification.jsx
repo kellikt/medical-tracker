@@ -1,7 +1,11 @@
 import React from 'react';
-import { Container, Table, Header, Input, Message } from 'semantic-ui-react';
+import { Meteor } from 'meteor/meteor';
+import PropTypes from 'prop-types';
+import { withTracker } from 'meteor/react-meteor-data';
+import { Container, Table, Header, Input, Message, Loader } from 'semantic-ui-react';
 import swal from 'sweetalert';
 import NotificationItem from '../components/NotificationItem';
+import { Notifications } from '../../api/notifications/Notifications';
 
 /** Renders a table containing all of the Notification documents. Use <NotificationItem> to render each row. */
 class ListNotification extends React.Component {
@@ -10,8 +14,12 @@ class ListNotification extends React.Component {
     swal('Success', 'This should populate the list notification table with a list of active notifications for the patient associated with the inputted patient ID.', 'success');
   }
 
-  // Render the page once subscriptions have been received.
   render() {
+    return (this.props.ready) ? this.renderPage() : <Loader active>Getting data</Loader>;
+  }
+
+  // Render the page once subscriptions have been received.
+  renderPage() {
     return (
       <Container>
         <Header as="h2" textAlign="center">List Notifications</Header>
@@ -36,7 +44,7 @@ class ListNotification extends React.Component {
             </Table.Row>
           </Table.Header>
           <Table.Body>
-            <NotificationItem/>
+            {this.props.notifications.map((notification) => <NotificationItem key={notification._id} notification={notification} />)}
           </Table.Body>
         </Table>
       </Container>
@@ -44,5 +52,22 @@ class ListNotification extends React.Component {
   }
 }
 
+// Require an array of Notification documents in the props.
+ListNotification.propTypes = {
+  notifications: PropTypes.array.isRequired,
+  ready: PropTypes.bool.isRequired,
+};
+
 // withTracker connects Meteor data to React components. https://guide.meteor.com/react.html#using-withTracker
-export default ListNotification;
+export default withTracker(() => {
+  // Get access to Notification documents.
+  const subscription = Meteor.subscribe(Notifications.userPublicationName);
+  // Determine if the subscription is ready
+  const ready = subscription.ready();
+  // Get the Notification documents
+  const notifications = Notifications.collection.find({}).fetch();
+  return {
+    notifications,
+    ready,
+  };
+})(ListNotification);
