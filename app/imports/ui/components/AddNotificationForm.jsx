@@ -10,7 +10,6 @@ import moment from 'moment';
 import 'antd/dist/antd.css';
 import swal from 'sweetalert';
 import { Notifications } from '../../api/notifications/Notifications';
-import { Stuffs } from '../../api/stuff/Stuff';
 
 const { RangePicker } = DatePicker;
 
@@ -27,9 +26,9 @@ class AddNotificationForm extends Component {
     // eslint-disable-next-line react/no-direct-mutation-state
     this.state.sendTime = moment(this.state.sendTime).format('h:mm a');
     // eslint-disable-next-line react/no-direct-mutation-state
-    this.state.startDate = moment(this.state.startDate).format('MM DD YYYY');
+    this.state.startDate = moment(this.state.startDate).format('MM-DD-YYYY');
     // eslint-disable-next-line react/no-direct-mutation-state
-    this.state.endDate = moment(this.state.endDate).format('MM DD YYYY');
+    this.state.endDate = moment(this.state.endDate).format('MM-DD-YYYY');
     const { patientID, sendTime, startDate, endDate, frequency, description } = this.state;
     Notifications.collection.insert({ patientID, sendTime, startDate, endDate, frequency, description },
       (error) => {
