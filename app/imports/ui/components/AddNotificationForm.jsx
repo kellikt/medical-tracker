@@ -49,7 +49,7 @@ class AddNotificationForm extends Component {
 
     const { patientID, sendTime, dates, frequency, description } = this.state;
     return (
-      <Form onSubmit={this.submitNotification}>
+      <Form size='big' onSubmit={this.submitNotification}>
         <Form.Group inline>
           <label>Patient ID</label>
           <Form.Input placeholder='Enter Patient ID Number' width={4} name='patientID' value={patientID} onChange={this.handleChange} />
@@ -93,7 +93,7 @@ class AddNotificationForm extends Component {
           value={description}
           onChange={this.handleChange}
         />
-        <Form.Group>
+        <Form.Group style={{ padding: '0px 0px 0px 10px' }}>
           <Link to="/list-notification"><Form.Button color="red" id="cancel" content="Cancel"/></Link>
           <Form.Field control={Button} color='blue'>Add New Notification</Form.Field>
         </Form.Group>

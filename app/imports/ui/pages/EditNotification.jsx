@@ -130,7 +130,7 @@ class EditNotification extends React.Component {
         <Grid.Column>
           <Header as="h2" textAlign="center">Edit Notification</Header>
           <Segment>
-            <Form onSubmit={this.submitNotification}>
+            <Form size='big' onSubmit={this.submitNotification}>
               <Form.Group inline>
                 <label>Patient ID</label>
                 {this.IDchange ?
@@ -224,7 +224,7 @@ class EditNotification extends React.Component {
                   onChange={this.onDescChange}
                 />
               }
-              <Form.Group>
+              <Form.Group style={{ padding: '0px 0px 0px 10px' }}>
                 <Link to="/list-notification"><Form.Button color="red" id="cancel" content="Cancel"/></Link>
                 <Form.Field control={Button} color='blue'>Edit Notification</Form.Field>
               </Form.Group>
