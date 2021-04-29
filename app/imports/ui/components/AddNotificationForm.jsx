@@ -9,60 +9,89 @@ import { TimePicker, DatePicker } from 'antd';
 import moment from 'moment';
 import 'antd/dist/antd.css';
 import swal from 'sweetalert';
+import { Notifications } from '../../api/notifications/Notifications';
+import { Stuffs } from '../../api/stuff/Stuff';
 
 const { RangePicker } = DatePicker;
 
 class AddNotificationForm extends Component {
-  state = {}
+  state = { patientID: '', sendTime: '', startDate: '', endDate: '', frequency: '', description: '' }
 
-  onChange = (time, timeString) => console.log(time, timeString)
+  onTimeChange = (time) => this.setState({ sendTime: time })
 
-  handleChange = (e, { value }) => this.setState({ value })
+  onDateChange = (dates) => this.setState({ startDate: dates[0], endDate: dates[1] })
 
-  submitNotification() {
-    swal('Success', 'This should add a new notification.', 'success');
+  handleChange = (e, { name, value }) => this.setState({ [name]: value })
+
+  submitNotification = () => {
+    // eslint-disable-next-line react/no-direct-mutation-state
+    this.state.sendTime = moment(this.state.sendTime).format('h:mm a');
+    // eslint-disable-next-line react/no-direct-mutation-state
+    this.state.startDate = moment(this.state.startDate).format('MM DD YYYY');
+    // eslint-disable-next-line react/no-direct-mutation-state
+    this.state.endDate = moment(this.state.endDate).format('MM DD YYYY');
+    const { patientID, sendTime, startDate, endDate, frequency, description } = this.state;
+    Notifications.collection.insert({ patientID, sendTime, startDate, endDate, frequency, description },
+      (error) => {
+        if (error) {
+          swal('Error', error.message, 'error');
+        } else {
+          swal('Success', 'Notification added successfully', 'success');
+          this.setState({ patientID: '', sendTime: '', startDate: '', endDate: '', frequency: '', description: '' });
+          // formRef.reset();
+        }
+      });
+    // swal('Success', 'This should add a new notification.', 'success');
+    // this.setState({ patientID: '', sendTime: '', startDate: '', endDate: '', frequency: '', description: '' });
   }
 
   render() {
-    const { value } = this.state;
+
+    const { patientID, sendTime, dates, frequency, description } = this.state;
     return (
       <Form onSubmit={this.submitNotification}>
         <Form.Group inline>
           <label>Patient ID</label>
-          <Form.Input placeholder='Enter Patient ID Number' width={4} />
+          <Form.Input placeholder='Enter Patient ID Number' width={4} name='patientID' value={patientID} onChange={this.handleChange} />
           <label>Send Time</label>
-          <TimePicker use12Hours format="h:mm a" onChange={this.onChange} defaultOpenValue={moment('00:00:00', 'HH:mm:ss')} />
+          <TimePicker value={sendTime} use12Hours format="h:mm a" onChange={this.onTimeChange} />
           <label style={{ padding: '0px 0px 0px 30px' }}>Date Range</label>
-          <RangePicker />
+          <RangePicker value={dates} onChange={this.onDateChange} />
         </Form.Group>
         <Form.Group inline>
           <label>Frequency</label>
           <Form.Field
             control={Radio}
+            name='frequency'
             label='Daily'
-            value='1'
-            checked={value === '1'}
+            value='daily'
+            checked={frequency === 'daily'}
             onChange={this.handleChange}
           />
           <Form.Field
             control={Radio}
+            name='frequency'
             label='Weekly'
-            value='2'
-            checked={value === '2'}
+            value='weekly'
+            checked={frequency === 'weekly'}
             onChange={this.handleChange}
           />
           <Form.Field
             control={Radio}
+            name='frequency'
             label='Monthly'
-            value='3'
-            checked={value === '3'}
+            value='monthly'
+            checked={frequency === 'monthly'}
             onChange={this.handleChange}
           />
         </Form.Group>
         <Form.Field
           control={TextArea}
+          name='description'
           label='Description'
           placeholder='Enter medical instructions from provider'
+          value={description}
+          onChange={this.handleChange}
         />
         <Form.Field control={Button} color='blue'>Add New Notification</Form.Field>
       </Form>

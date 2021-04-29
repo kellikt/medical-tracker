@@ -14,7 +14,7 @@ class NotificationItem extends React.Component {
         <Table.Cell>{this.props.notification.frequency}</Table.Cell>
         <Table.Cell>{this.props.notification.description}</Table.Cell>
         <Table.Cell>
-          <Link to={'/edit-notification'}>Edit <Icon name='edit'/></Link>
+          <Link to={`/edit-notification/${this.props.notification._id}`}>Edit <Icon name='edit'/></Link>
         </Table.Cell>
       </Table.Row>
     );
