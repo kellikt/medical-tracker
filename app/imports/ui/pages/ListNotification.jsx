@@ -31,8 +31,8 @@ class ListNotification extends React.Component {
             Please press the Edit link to go to the Edit Notification page.
           </p>
         </Message>
-        <Input action={{ color: 'blue', content: 'Submit', onClick: () => this.submitID() }} placeholder='Enter Patient ID' />
-        <Table celled>
+        <Input size='huge'action={{ color: 'blue', content: 'Submit', onClick: () => this.submitID() }} placeholder='Enter Patient ID' />
+        <Table size='large' celled>
           <Table.Header>
             <Table.Row>
               <Table.HeaderCell>Start Time Range</Table.HeaderCell>
