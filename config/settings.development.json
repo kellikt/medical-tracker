@@ -12,8 +12,8 @@
   ],
 
   "defaultNotifications": [
-    { "patientID":  "12345", "sendTime": "09:00", "startDate": "01-01-2021", "endDate": "12/12/2021", "frequency":  "daily", "description":  "Take 2 pills of Advil at 9AM"},
-    { "patientID":  "23456", "sendTime": "09:00", "startDate": "01-01-2021", "endDate": "12/12/2021", "frequency":  "daily", "description":  "Take 2 pills of Advil at 9AM"},
-    { "patientID":  "12345", "sendTime": "22:00", "startDate": "01-01-2021", "endDate": "12/12/2021", "frequency":  "daily", "description":  "Take 2 pills of Tylenol at 10PM"}
+    { "patientID":  "12345", "sendTime": "09:00", "startDate": "01-01-2021", "endDate": "12-12-2021", "frequency":  "daily", "description":  "Take 2 pills of Advil at 9AM"},
+    { "patientID":  "23456", "sendTime": "09:00", "startDate": "01-01-2021", "endDate": "12-12-2021", "frequency":  "daily", "description":  "Take 2 pills of Advil at 9AM"},
+    { "patientID":  "12345", "sendTime": "22:00", "startDate": "01-01-2021", "endDate": "12-12-2021", "frequency":  "daily", "description":  "Take 2 pills of Tylenol at 10PM"}
   ]
 }
