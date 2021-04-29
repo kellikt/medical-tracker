@@ -7,6 +7,7 @@ import PropTypes from 'prop-types';
 import { DatePicker, TimePicker } from 'antd';
 import moment from 'moment';
 import swal from 'sweetalert';
+import { Link } from 'react-router-dom';
 import { Notifications } from '../../api/notifications/Notifications';
 // import EditNotificationForm from '../components/EditNotificationForm';
 
@@ -223,7 +224,10 @@ class EditNotification extends React.Component {
                   onChange={this.onDescChange}
                 />
               }
-              <Form.Field control={Button} color='blue'>Edit Notification</Form.Field>
+              <Form.Group>
+                <Link to="/list-notification"><Form.Button color="red" id="cancel" content="Cancel"/></Link>
+                <Form.Field control={Button} color='blue'>Edit Notification</Form.Field>
+              </Form.Group>
             </Form>
           </Segment>
         </Grid.Column>
