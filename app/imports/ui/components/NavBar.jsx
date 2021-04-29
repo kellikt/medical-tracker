@@ -21,7 +21,7 @@ class NavBar extends React.Component {
             <Dropdown id="login-dropdown" text="Notifications" pointing="top right" key='notifications'>
               <Dropdown.Menu>
                 <Dropdown.Item id="add-dropdown-notification" icon="add" text="Add Notification" as={NavLink} exact to="/add-notification"/>
-                <Dropdown.Item id="list-dropdown-notification" icon="list" text="List Notifications" as={NavLink} exact to="/list-notification"/>
+                <Dropdown.Item id="list-dropdown-notification" icon="list" text="List/Edit Notifications" as={NavLink} exact to="/list-notification"/>
               </Dropdown.Menu>
             </Dropdown>
           </Menu.Item>,

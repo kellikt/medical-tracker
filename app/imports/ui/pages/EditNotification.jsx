@@ -16,6 +16,7 @@ const { RangePicker } = DatePicker;
 class EditNotification extends React.Component {
 
   state = { patientID: '', sendTime: '', startDate: '', endDate: '', frequency: '', description: '' }
+
   finalState = { patientID: '', sendTime: '', startDate: '', endDate: '', frequency: '', description: '' }
 
   timeChange = false

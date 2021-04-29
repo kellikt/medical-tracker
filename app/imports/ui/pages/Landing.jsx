@@ -59,7 +59,7 @@ class Landing extends React.Component {
               </Grid.Column>
               <Grid.Column width={3} floated="left">
                 <Link to="/list-notification"><Form.Button color="blue" id="edit-notif"
-                  content="List Notifications"/></Link>
+                  content="List/Edit Notifications"/></Link>
               </Grid.Column>
             </Grid.Row>,
             <Grid.Row key="records">
