@@ -1,5 +1,5 @@
 import React from 'react';
-import { Grid, Loader, Header, Segment, Form, Radio, TextArea, Button } from 'semantic-ui-react';
+import { Grid, Loader, Header, Segment, Form, Radio, TextArea, Button, Divider, Message } from 'semantic-ui-react';
 import { Meteor } from 'meteor/meteor';
 import { withTracker } from 'meteor/react-meteor-data';
 import PropTypes from 'prop-types';
@@ -128,9 +128,19 @@ class EditNotification extends React.Component {
     return (
       <Grid container centered>
         <Grid.Column>
-          <Header as="h2" textAlign="center">Edit Notification</Header>
+          <Header as="h2" color='blue'>Edit Notification</Header>
+          <Divider/>
+          <Message>
+            <Message.Header>Instructions</Message.Header>
+            <p>
+              This page has the current notification's information pre-filled. You do not need to enter any information again,
+              but make sure to enter your new changes. You can also type in the Send Time manually instead of using the time picker.
+              Please use the format "hh:mm aa" (example: "12:00 pm") when typing in the time. You can also type in the Date Range manually. Please use the format "mm-dd-yyyy" (example: "01-01-2021"). Click Edit Notification when finished or Cancel
+              if you want to cancel this operation.
+            </p>
+          </Message>
           <Segment>
-            <Form size='big' onSubmit={this.submitNotification}>
+            <Form size='large' onSubmit={this.submitNotification}>
               <Form.Group inline>
                 <label>Patient ID</label>
                 {this.IDchange ?

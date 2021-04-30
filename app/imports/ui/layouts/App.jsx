@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { Meteor } from 'meteor/meteor';
 import 'semantic-ui-css/semantic.css';
 import { Roles } from 'meteor/alanning:roles';
+import { Container, Header, Divider } from 'semantic-ui-react';
 import { HashRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
 import NavBar from '../components/NavBar';
 import Footer from '../components/Footer';
@@ -28,7 +29,9 @@ class App extends React.Component {
   render() {
     return (
       <Router>
-        <div>
+        <Container>
+          <br/>
+          <Header color='blue' as='h1'>Medical Tracker</Header>
           <NavBar/>
           <Switch>
             <Route exact path="/" component={Landing}/>
@@ -49,7 +52,7 @@ class App extends React.Component {
             <Route component={NotFound}/>
           </Switch>
           <Footer/>
-        </div>
+        </Container>
       </Router>
     );
   }

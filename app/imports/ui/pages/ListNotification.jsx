@@ -2,7 +2,7 @@ import React from 'react';
 import { Meteor } from 'meteor/meteor';
 import PropTypes from 'prop-types';
 import { withTracker } from 'meteor/react-meteor-data';
-import { Container, Table, Header, Input, Message, Loader } from 'semantic-ui-react';
+import { Container, Table, Header, Input, Message, Loader, Divider } from 'semantic-ui-react';
 import swal from 'sweetalert';
 import NotificationItem from '../components/NotificationItem';
 import { Notifications } from '../../api/notifications/Notifications';
@@ -22,25 +22,26 @@ class ListNotification extends React.Component {
   renderPage() {
     return (
       <Container>
-        <Header as="h2" textAlign="center">List Notifications</Header>
+        <Header color='blue' as="h2">List Notifications</Header>
+        <Divider/>
         <Message>
           <Message.Header>Note for Prototype Purposes</Message.Header>
           <p>
             This page is supposed to auto-populate data when the submit button is pressed and a valid patient ID is entered.
-            Since the back-end is not implemented yet, an example list of notifications is listed below.
+            Since the back-end is not fully implemented yet, an example list of notifications is listed below.
             Please press the Edit link to go to the Edit Notification page.
           </p>
         </Message>
-        <Input size='huge'action={{ color: 'blue', content: 'Submit', onClick: () => this.submitID() }} placeholder='Enter Patient ID' />
+        <Input size='large' action={{ color: 'blue', content: 'Submit', onClick: () => this.submitID() }} placeholder='Enter Patient ID' />
         <Table size='large' celled>
           <Table.Header>
             <Table.Row>
-              <Table.HeaderCell>Start Time Range</Table.HeaderCell>
+              <Table.HeaderCell>Edit</Table.HeaderCell>
               <Table.HeaderCell>End Time Range</Table.HeaderCell>
               <Table.HeaderCell>Send Time</Table.HeaderCell>
               <Table.HeaderCell>Frequency</Table.HeaderCell>
               <Table.HeaderCell>Instructions</Table.HeaderCell>
-              <Table.HeaderCell>Edit</Table.HeaderCell>
+              <Table.HeaderCell>Start Time Range</Table.HeaderCell>
             </Table.Row>
           </Table.Header>
           <Table.Body>

@@ -11,10 +11,7 @@ class NavBar extends React.Component {
   render() {
     const menuStyle = { marginBottom: '10px' };
     return (
-      <Menu style={menuStyle} attached="top" color='blue' borderless inverted>
-        <Menu.Item as={NavLink} activeClassName="" exact to="/">
-          <Header inverted as='h1'>Medical Tracker</Header>
-        </Menu.Item>
+      <Menu size='large' style={menuStyle} color='blue' borderless inverted>
         <Menu.Item as={NavLink} activeClassName="" exact to="/" key='home'>Home</Menu.Item>
         {this.props.currentUser ? (
           [<Menu.Item key='menu-notification'>
