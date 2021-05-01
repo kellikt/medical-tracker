@@ -48,10 +48,10 @@ export default class Signin extends React.Component {
             <RedCrossImage/>
           </Grid.Column>
           <Grid.Column>
-            <Header as="h2" textAlign="center">
+            <Header as="h1" textAlign="center">
               Login
             </Header>
-            <Form onSubmit={this.submit}>
+            <Form size ='large' onSubmit={this.submit}>
               <Segment stacked>
                 <Form.Input
                   label="Username"
