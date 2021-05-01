@@ -1,5 +1,5 @@
 import React from 'react';
-import { Form, Grid, Header, Message, Divider } from 'semantic-ui-react';
+import { Form, Grid, Header, Message, Divider, Container } from 'semantic-ui-react';
 import { Link, withRouter } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { Meteor } from 'meteor/meteor';
@@ -14,84 +14,90 @@ class Landing extends React.Component {
 
   render() {
     return (
-      <Grid id='landing-page' container>
-        {this.props.currentUser ? (
-          [
-            <Grid.Row key="welcome">
-              <Header size="huge">Welcome</Header>
-            </Grid.Row>,
-            <Message key="note">
-              <Message.Header>Note for Prototype Purposes</Message.Header>
-              <p>
+      <Container id="signin-page" className={'hospital-background'}>
+        <br/>
+        <br/>
+        <div style={{ padding: '5em 2.5em 5em 2.5em' }}className='transparent-background'>
+          <Grid id='landing-page' container>
+            {this.props.currentUser ? (
+              [
+                <Grid.Row key="welcome">
+                  <Header size="huge">Welcome</Header>
+                </Grid.Row>,
+                <Message key="note">
+                  <Message.Header>Note for Prototype Purposes</Message.Header>
+                  <p>
                 This page is supposed to connect a patient account when the submit button is pressed and a valid patient ID is entered.
                 Since the back-end is not implemented yet, a set of buttons/links are listed below, as if a valid patient ID has already been entered.
-              </p>
-            </Message>,
-            <Grid.Row key="help-patient">
-              <Grid.Column width={3} floated="right">
-                <Header size="large">Help a Patient:</Header>
-                <Divider/>
-              </Grid.Column>
-              <Grid.Column width={9}>
-                <Header> </Header>
-              </Grid.Column>
-            </Grid.Row>,
-            <Grid.Row centered key="patient-id">
-              <Form.Input size="large"
-                placeholder="Enter Patient ID"
-              />
-              <Form.Button size="large" color="blue" id="landing-submit" content="Submit" onClick={this.submitID}/>
+                  </p>
+                </Message>,
+                <Grid.Row key="help-patient">
+                  <Grid.Column style={{ padding: '0em 0em 0em 5em' }}width={4} floated="right">
+                    <Header size="large">Help a Patient:</Header>
+                    <Divider/>
+                  </Grid.Column>
+                  <Grid.Column width={9}>
+                    <Header> </Header>
+                  </Grid.Column>
+                </Grid.Row>,
+                <Grid.Row centered key="patient-id">
+                  <Form.Input size="large"
+                    placeholder="Enter Patient ID"
+                  />
+                  <Form.Button size="large" color="blue" id="landing-submit" content="Submit" onClick={this.submitID}/>
 
-              <Link style={{ padding: '5px 0px 0px 10px' }} to="/add-account">New Patient?</Link>
-            </Grid.Row>,
-            <Grid.Row centered key="notifications">
-              <Grid.Column width={2} floated="right">
-                <Header size="large">Notifications:</Header>
-                <Divider/>
-              </Grid.Column>
-              <Grid.Column width={10}>
-                <Header> </Header>
-              </Grid.Column>
-            </Grid.Row>,
-            <Grid.Row columns={16} key="add">
-              <Grid.Column width={3} floated="right">
-                <Link to="/add-notification"><Form.Button size="large" color="blue" id="add-notif"
-                  content="Add Notification"/></Link>
-              </Grid.Column>
-              <Grid.Column width={3} floated="left">
-                <Link to="/list-notification"><Form.Button size="large" color="blue" id="edit-notif"
-                  content="List Notifications"/></Link>
-              </Grid.Column>
-            </Grid.Row>,
-            <Grid.Row key="records">
-              <Grid.Column width={2} floated="right">
-                <Header size="large">Records:</Header>
-                <Divider/>
-              </Grid.Column>
-              <Grid.Column width={10}>
-                <Header> </Header>
-              </Grid.Column>
-            </Grid.Row>,
-            <Grid.Row key="edit">
-              <Grid.Column width={3} floated="right">
-                <Link to="/edit-account"><Form.Button size="large" color="blue" id="account" content="Edit Account"/></Link>
-              </Grid.Column>
-              <Grid.Column width={3} floated="left">
-                <Link to="/treatment-log"><Form.Button size="large" color="blue" id="treatment-log" content="Treatment Log"/></Link>
-              </Grid.Column>
-            </Grid.Row>,
-          ]
-        ) :
-          [<Grid.Column key='log-in' textAlign="center">
-            <Header size="huge">Please Log In</Header>
-            <Message>
-              <p>This website is for authorized use by medical administrators or professionals only. You must log in before accessing this website.</p>
-            </Message>
-            <Link key='link-log-in' to="/login"><Form.Button size="massive" color="blue" key='form-log-in' id="log in" content="Log In"/></Link>
-          </Grid.Column>,
-          ]
-        }
-      </Grid>
+                  <Link style={{ padding: '5px 0px 0px 10px' }} to="/add-account">New Patient?</Link>
+                </Grid.Row>,
+                <Grid.Row centered key="notifications">
+                  <Grid.Column width={2} floated="right">
+                    <Header size="large">Notifications:</Header>
+                    <Divider/>
+                  </Grid.Column>
+                  <Grid.Column width={10}>
+                    <Header> </Header>
+                  </Grid.Column>
+                </Grid.Row>,
+                <Grid.Row columns={16} key="add">
+                  <Grid.Column width={3} floated="right">
+                    <Link to="/add-notification"><Form.Button size="large" color="blue" id="add-notif"
+                      content="Add Notification"/></Link>
+                  </Grid.Column>
+                  <Grid.Column width={3} floated="left">
+                    <Link to="/list-notification"><Form.Button size="large" color="blue" id="edit-notif"
+                      content="List Notifications"/></Link>
+                  </Grid.Column>
+                </Grid.Row>,
+                <Grid.Row key="records">
+                  <Grid.Column width={2} floated="right">
+                    <Header size="large">Records:</Header>
+                    <Divider/>
+                  </Grid.Column>
+                  <Grid.Column width={10}>
+                    <Header> </Header>
+                  </Grid.Column>
+                </Grid.Row>,
+                <Grid.Row key="edit">
+                  <Grid.Column width={3} floated="right">
+                    <Link to="/edit-account"><Form.Button size="large" color="blue" id="account" content="Edit Account"/></Link>
+                  </Grid.Column>
+                  <Grid.Column width={3} floated="left">
+                    <Link to="/treatment-log"><Form.Button size="large" color="blue" id="treatment-log" content="Treatment Log"/></Link>
+                  </Grid.Column>
+                </Grid.Row>,
+              ]
+            ) :
+              [<Grid.Column key='log-in' textAlign="center">
+                <Header size="huge">Please Log In</Header>
+                <Message>
+                  <p>This website is for authorized use by medical administrators or professionals only. You must log in before accessing this website.</p>
+                </Message>
+                <Link key='link-log-in' to="/login"><Form.Button size="massive" color="blue" key='form-log-in' id="log in" content="Log In"/></Link>
+              </Grid.Column>,
+              ]
+            }
+          </Grid>
+        </div>
+      </Container>
     );
   }
 }

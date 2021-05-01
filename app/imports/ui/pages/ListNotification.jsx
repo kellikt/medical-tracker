@@ -37,11 +37,11 @@ class ListNotification extends React.Component {
           <Table.Header>
             <Table.Row>
               <Table.HeaderCell>Edit</Table.HeaderCell>
+              <Table.HeaderCell>Start Time Range</Table.HeaderCell>
               <Table.HeaderCell>End Time Range</Table.HeaderCell>
               <Table.HeaderCell>Send Time</Table.HeaderCell>
               <Table.HeaderCell>Frequency</Table.HeaderCell>
               <Table.HeaderCell>Instructions</Table.HeaderCell>
-              <Table.HeaderCell>Start Time Range</Table.HeaderCell>
             </Table.Row>
           </Table.Header>
           <Table.Body>
