@@ -10,9 +10,9 @@ class LoggedInLanding extends React.Component {
 
 
           <Grid.Column width={8}>
-            <h1>Welcome</h1>
+            <h1>Welcome!</h1>
             <h3>Help A Patient</h3>
-            <p>Patient ID</p>
+            <h4>Patient ID</h4>
             <Form.Input
                 placeholder="##########"
             />
@@ -21,17 +21,17 @@ class LoggedInLanding extends React.Component {
               <Link to="/add-account">New Patient?</Link>
 
             <p></p>
-            <p>
+            <h4>
               Notifications
-            </p>
+            </h4>
             <Form.Button id="add-notif" content="ADD"/>
             <p></p>
             <Form.Button id="edit-notif" content="EDIT"/>
             <p></p>
 
             <p></p>
-            <p>Records</p>
-            <Form.Button id="account" content="Acount"/>
+            <h4>Records</h4>
+            <Form.Button id="account" content="Account"/>
             <p></p>
             <Form.Button id="treatment-log" content="Treatment Log"/>
           </Grid.Column>
