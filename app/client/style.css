@@ -1,0 +1,17 @@
+.blue-header {
+  background-color: #2185D0;
+  background-size: 200px;
+}
+
+.hospital-background{
+  background: url("https://images3.alphacoders.com/101/thumb-1920-1010294.jpg");
+  background-size: cover;
+  height: 700px;
+  margin-top: 20px;
+  padding-right: 50px;
+  padding-left: 50px;
+}
+
+.transparent-background {
+  background-color: rgba(255,255,255,0.75);
+}

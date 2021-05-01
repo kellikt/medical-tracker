@@ -1,5 +1,5 @@
 import React from 'react';
-import { Grid, Loader, Header, Segment } from 'semantic-ui-react';
+import { Grid, Loader, Header, Segment, Divider, Message } from 'semantic-ui-react';
 import { Meteor } from 'meteor/meteor';
 import { withTracker } from 'meteor/react-meteor-data';
 import PropTypes from 'prop-types';
@@ -24,7 +24,16 @@ class AddNotification extends React.Component {
     return (
       <Grid container centered>
         <Grid.Column>
-          <Header as="h2" textAlign="center">Add Notification</Header>
+          <Header as="h2" color="blue">Add Notification</Header>
+          <Divider/>
+          <Message>
+            <Message.Header>Instructions</Message.Header>
+            <p>
+              Please enter your notification information in these fields. You can type in the Send Time manually instead of using the time picker.
+              Please use the format "hh:mm aa" (example: "12:00 pm") when typing in the time. You can also type in the Date Range manually. Please use the format "mm-dd-yyyy" (example: "01-01-2021"). Click Add New Notification when finished or Cancel
+              if you want to cancel this operation. Once a new notification is added, you can create another notification on this same page.
+            </p>
+          </Message>
           <Segment>
             <AddNotificationForm/>
           </Segment>

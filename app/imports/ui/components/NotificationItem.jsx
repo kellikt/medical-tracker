@@ -8,14 +8,14 @@ class NotificationItem extends React.Component {
   render() {
     return (
       <Table.Row>
+        <Table.Cell>
+          <Link to={`/edit-notification/${this.props.notification._id}`}>Edit <Icon name='edit'/></Link>
+        </Table.Cell>
         <Table.Cell>{this.props.notification.startDate}</Table.Cell>
         <Table.Cell>{this.props.notification.endDate}</Table.Cell>
         <Table.Cell>{this.props.notification.sendTime}</Table.Cell>
         <Table.Cell>{this.props.notification.frequency}</Table.Cell>
         <Table.Cell>{this.props.notification.description}</Table.Cell>
-        <Table.Cell>
-          <Link to={`/edit-notification/${this.props.notification._id}`}>Edit <Icon name='edit'/></Link>
-        </Table.Cell>
       </Table.Row>
     );
   }

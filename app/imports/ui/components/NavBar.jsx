@@ -11,17 +11,14 @@ class NavBar extends React.Component {
   render() {
     const menuStyle = { marginBottom: '10px' };
     return (
-      <Menu style={menuStyle} attached="top" color='blue' borderless inverted>
-        <Menu.Item as={NavLink} activeClassName="" exact to="/">
-          <Header inverted as='h1'>Medical Tracker</Header>
-        </Menu.Item>
+      <Menu size='large' style={menuStyle} color='blue' borderless inverted>
         <Menu.Item as={NavLink} activeClassName="" exact to="/" key='home'>Home</Menu.Item>
         {this.props.currentUser ? (
           [<Menu.Item key='menu-notification'>
             <Dropdown id="login-dropdown" text="Notifications" pointing="top right" key='notifications'>
               <Dropdown.Menu>
                 <Dropdown.Item id="add-dropdown-notification" icon="add" text="Add Notification" as={NavLink} exact to="/add-notification"/>
-                <Dropdown.Item id="list-dropdown-notification" icon="list" text="List Notifications" as={NavLink} exact to="/list-notification"/>
+                <Dropdown.Item id="list-dropdown-notification" icon="list" text="List/Edit Notifications" as={NavLink} exact to="/list-notification"/>
               </Dropdown.Menu>
             </Dropdown>
           </Menu.Item>,
