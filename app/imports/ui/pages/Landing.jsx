@@ -1,5 +1,5 @@
 import React from 'react';
-import { Form, Grid, Header, Message } from 'semantic-ui-react';
+import { Form, Grid, Header, Message, Divider } from 'semantic-ui-react';
 import { Link, withRouter } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { Meteor } from 'meteor/meteor';
@@ -29,24 +29,25 @@ class Landing extends React.Component {
             </Message>,
             <Grid.Row key="help-patient">
               <Grid.Column width={3} floated="right">
-                <Header>Help a Patient:</Header>
+                <Header size="large">Help a Patient:</Header>
+                <Divider/>
               </Grid.Column>
               <Grid.Column width={9}>
                 <Header> </Header>
               </Grid.Column>
             </Grid.Row>,
             <Grid.Row centered key="patient-id">
-              <label style={{ padding: '5px 30px 0px 30px' }}>Enter Patient ID:</label>
-              <Form.Input
-                placeholder="Patient ID"
+              <Form.Input size="large"
+                placeholder="Enter Patient ID"
               />
-              <Form.Button color="blue" id="landing-submit" content="Submit" onClick={this.submitID}/>
+              <Form.Button size="large" color="blue" id="landing-submit" content="Submit" onClick={this.submitID}/>
 
               <Link style={{ padding: '5px 0px 0px 10px' }} to="/add-account">New Patient?</Link>
             </Grid.Row>,
             <Grid.Row centered key="notifications">
               <Grid.Column width={2} floated="right">
-                <Header>Notifications:</Header>
+                <Header size="large">Notifications:</Header>
+                <Divider/>
               </Grid.Column>
               <Grid.Column width={10}>
                 <Header> </Header>
@@ -54,17 +55,18 @@ class Landing extends React.Component {
             </Grid.Row>,
             <Grid.Row columns={16} key="add">
               <Grid.Column width={3} floated="right">
-                <Link to="/add-notification"><Form.Button color="blue" id="add-notif"
+                <Link to="/add-notification"><Form.Button size="large" color="blue" id="add-notif"
                   content="Add Notification"/></Link>
               </Grid.Column>
               <Grid.Column width={3} floated="left">
-                <Link to="/list-notification"><Form.Button color="blue" id="edit-notif"
+                <Link to="/list-notification"><Form.Button size="large" color="blue" id="edit-notif"
                   content="List Notifications"/></Link>
               </Grid.Column>
             </Grid.Row>,
             <Grid.Row key="records">
               <Grid.Column width={2} floated="right">
-                <Header>Records:</Header>
+                <Header size="large">Records:</Header>
+                <Divider/>
               </Grid.Column>
               <Grid.Column width={10}>
                 <Header> </Header>
@@ -72,10 +74,10 @@ class Landing extends React.Component {
             </Grid.Row>,
             <Grid.Row key="edit">
               <Grid.Column width={3} floated="right">
-                <Link to="/edit-account"><Form.Button color="blue" id="account" content="Edit Account"/></Link>
+                <Link to="/edit-account"><Form.Button size="large" color="blue" id="account" content="Edit Account"/></Link>
               </Grid.Column>
               <Grid.Column width={3} floated="left">
-                <Link to="/treatment-log"><Form.Button color="blue" id="treatment-log" content="Treatment Log"/></Link>
+                <Link to="/treatment-log"><Form.Button size="large" color="blue" id="treatment-log" content="Treatment Log"/></Link>
               </Grid.Column>
             </Grid.Row>,
           ]
