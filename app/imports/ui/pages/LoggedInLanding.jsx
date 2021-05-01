@@ -13,6 +13,7 @@ class LoggedInLanding extends React.Component {
             <h1>Welcome!</h1>
             <h3>Help A Patient</h3>
             <h4>Patient ID</h4>
+            <Form size = 'large'>
             <Form.Input
                 placeholder="##########"
             />
@@ -34,6 +35,7 @@ class LoggedInLanding extends React.Component {
             <Form.Button id="account" content="Account"/>
             <p></p>
             <Form.Button id="treatment-log" content="Treatment Log"/>
+            </Form>
           </Grid.Column>
 
         </Grid>
