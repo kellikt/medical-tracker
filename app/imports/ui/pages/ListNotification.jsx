@@ -32,7 +32,7 @@ class ListNotification extends React.Component {
             Please press the Edit link to go to the Edit Notification page.
           </p>
         </Message>
-        <Input size='large' action={{ color: 'blue', content: 'Submit', onClick: () => this.submitID() }} placeholder='Enter Patient ID' />
+        <Input size='large' action={{ color: 'blue', icon: 'search', onClick: () => this.submitID() }} placeholder='Enter Patient ID' />
         <Table size='large' celled>
           <Table.Header>
             <Table.Row>
