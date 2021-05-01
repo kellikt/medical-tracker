@@ -53,17 +53,17 @@ class EditPatient extends React.Component {
               <Segment>
 								<Grid columns={2} centered divided>
 										<Grid.Column>
-											<TextField name='patientName' label='Patient name:'/>
-											<TextField name='patientID' label='Patient ID:'/>
-											<TextField name='patientEmail' label='Patient email :'/>
-											<TextField name='patientPhone' label='Patient phone number:'/>
+											<TextField name='patientName' label='Patient name:' size='big'/>
+											<TextField name='patientID' label='Patient ID:' size='big'/>
+											<TextField name='patientEmail' label='Patient email :' size='big'/>
+											<TextField name='patientPhone' label='Patient phone number:' size='big'/>
 										</Grid.Column>
 										<Grid.Column>
 												<Header as="h3" textAlign="center">Notification preferences</Header>
-												<BoolField name='emailPref' label='Email'/>
-												<BoolField name='phonePref' label='Phone'/>
-												<SelectField name='recievePref' label='Recieve:'/>
-												<SubmitField value='Submit' label=''/>
+												<BoolField name='emailPref' label='Email' size='big'/>
+												<BoolField name='phonePref' label='Phone' size='big'/>
+												<SelectField name='recievePref' label='Recieve:' size='big'/>
+												<SubmitField value='Submit' label='' size='big'/>
 												<ErrorsField/>
 										</Grid.Column>
 								</Grid>
