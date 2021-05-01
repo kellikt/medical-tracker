@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import { Link, Redirect } from 'react-router-dom';
 import { Meteor } from 'meteor/meteor';
 import { Container, Form, Grid, Header, Message, Segment, Image } from 'semantic-ui-react';
-import RedCrossImage from '../components/RedCrossImage';
 /**
  * Signin page overrides the form’s submit event and call Meteor’s loginWithPassword().
  * Authentication errors modify the component’s state to be displayed
@@ -42,54 +41,62 @@ export default class Signin extends React.Component {
     }
     // Otherwise return the Login form.
     return (
-      <Container id="signin-page" className={"hospital-background"}>
-        <Grid textAlign="center" verticalAlign="middle" centered columns={2}>
-          <Grid.Column>
-            <Image src="images/RedCross.png"/>
-          </Grid.Column>
-          <Grid.Column>
-            <Form onSubmit={this.submit}>
-              <Segment stacked>
-                <Header as="h2" textAlign="center">
+      <Container id="signin-page" className={'hospital-background'}>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <div className='transparent-background'>
+          <Grid textAlign="center" verticalAlign="middle" centered columns={2}>
+            <Grid.Column>
+              <Image src="images/RedCross.png"/>
+            </Grid.Column>
+            <Grid.Column style={{ padding: '0em 5em 0em 0em' }}>
+              <Form size='large' nSubmit={this.submit}>
+                <Segment stacked size='large'>
+                  <Header as="h2" textAlign="center">
                   Login
-                </Header>
-                <Form.Input
-                  label="Username"
-                  id="signin-form-email"
-                  icon="user"
-                  iconPosition="left"
-                  name="email"
-                  type="email"
-                  placeholder="Username"
-                  onChange={this.handleChange}
+                  </Header>
+                  <Form.Input
+                    label="Username"
+                    id="signin-form-email"
+                    icon="user"
+                    iconPosition="left"
+                    name="email"
+                    type="email"
+                    placeholder="Username"
+                    onChange={this.handleChange}
+                  />
+                  <Form.Input
+                    label="Password"
+                    id="signin-form-password"
+                    icon="lock"
+                    iconPosition="left"
+                    name="password"
+                    placeholder="Password"
+                    type="password"
+                    onChange={this.handleChange}
+                  />
+                  <Form.Button id="signin-form-submit" content="Submit"/>
+                </Segment>
+              </Form>
+              <Message>
+                <Link to="/signup">Make an Account</Link>
+              </Message>
+              {this.state.error === '' ? (
+                ''
+              ) : (
+                <Message
+                  error
+                  header="Login was not successful"
+                  content={this.state.error}
                 />
-                <Form.Input
-                  label="Password"
-                  id="signin-form-password"
-                  icon="lock"
-                  iconPosition="left"
-                  name="password"
-                  placeholder="Password"
-                  type="password"
-                  onChange={this.handleChange}
-                />
-                <Form.Button id="signin-form-submit" content="Submit"/>
-              </Segment>
-            </Form>
-            <Message>
-              <Link to="/signup">Make an Account</Link>
-            </Message>
-            {this.state.error === '' ? (
-              ''
-            ) : (
-              <Message
-                error
-                header="Login was not successful"
-                content={this.state.error}
-              />
-            )}
-          </Grid.Column>
-        </Grid>
+              )}
+            </Grid.Column>
+          </Grid>
+        </div>
       </Container>
     );
   }
