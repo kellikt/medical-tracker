@@ -11,7 +11,7 @@ class NavBar extends React.Component {
   render() {
     const menuStyle = { marginBottom: '10px' };
     return (
-      <Menu style={menuStyle} attached="top" borderless inverted>
+      <Menu style={menuStyle} attached="top" color='blue' borderless inverted>
         <Menu.Item as={NavLink} activeClassName="" exact to="/">
           <Header inverted as='h1'>Medical Tracker</Header>
         </Menu.Item>
@@ -20,8 +20,8 @@ class NavBar extends React.Component {
           [<Menu.Item key='menu-notification'>
             <Dropdown id="login-dropdown" text="Notifications" pointing="top right" key='notifications'>
               <Dropdown.Menu>
-                <Dropdown.Item id="add-dropdown-notification" icon="add" text="Add" as={NavLink} exact to="/add-notification"/>
-                <Dropdown.Item id="list-dropdown-notification" icon="list" text="List" as={NavLink} exact to="/list-notification"/>
+                <Dropdown.Item id="add-dropdown-notification" icon="add" text="Add Notification" as={NavLink} exact to="/add-notification"/>
+                <Dropdown.Item id="list-dropdown-notification" icon="list" text="List Notifications" as={NavLink} exact to="/list-notification"/>
               </Dropdown.Menu>
             </Dropdown>
           </Menu.Item>,
@@ -43,7 +43,7 @@ class NavBar extends React.Component {
           {this.props.currentUser === '' ? (
             <Dropdown id="login-dropdown" text="Login" pointing="top right" icon={'user'}>
               <Dropdown.Menu>
-                <Dropdown.Item id="login-dropdown-sign-in" icon="user" text="Sign In" as={NavLink} exact to="/signin"/>
+                <Dropdown.Item id="login-dropdown-sign-in" icon="user" text="Sign In" as={NavLink} exact to="/login"/>
                 <Dropdown.Item id="login-dropdown-sign-up" icon="add user" text="Sign Up" as={NavLink} exact to="/signup"/>
               </Dropdown.Menu>
             </Dropdown>

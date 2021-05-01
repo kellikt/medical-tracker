@@ -3,12 +3,11 @@ import { Grid, Loader, Header, Segment } from 'semantic-ui-react';
 import { Meteor } from 'meteor/meteor';
 import { withTracker } from 'meteor/react-meteor-data';
 import PropTypes from 'prop-types';
-import SimpleSchema2Bridge from 'uniforms-bridge-simple-schema-2';
 import { Stuffs } from '../../api/stuff/Stuff';
-import EditNotificationForm from '../components/EditNotificationForm';
+import AddNotificationForm from '../components/AddNotificationForm';
 
-/** Renders the Page for editing a single document. */
-class EditNotification extends React.Component {
+/** Renders the Page for adding a single document. */
+class AddNotification extends React.Component {
 
   // On successful submit, insert the data.
   submit(data) {
@@ -25,9 +24,9 @@ class EditNotification extends React.Component {
     return (
       <Grid container centered>
         <Grid.Column>
-          <Header as="h2" textAlign="center">Edit Notification</Header>
+          <Header as="h2" textAlign="center">Add Notification</Header>
           <Segment>
-            <EditNotificationForm/>
+            <AddNotificationForm/>
           </Segment>
         </Grid.Column>
       </Grid>
@@ -36,7 +35,7 @@ class EditNotification extends React.Component {
 }
 
 // Require the presence of a Stuff document in the props object. Uniforms adds 'model' to the props, which we use.
-EditNotification.propTypes = {
+AddNotification.propTypes = {
   doc: PropTypes.object,
   model: PropTypes.object,
   ready: PropTypes.bool.isRequired,
@@ -56,4 +55,4 @@ export default withTracker(({ match }) => {
     doc,
     ready,
   };
-})(EditNotification);
+})(AddNotification);

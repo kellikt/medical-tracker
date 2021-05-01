@@ -29,7 +29,7 @@ class EditNotificationForm extends Component {
       <Form onSubmit={this.submitNotification}>
         <Form.Group inline>
           <label>Send Time</label>
-          <TimePicker onChange={this.onChange} defaultOpenValue={moment('00:00:00', 'HH:mm:ss')} />
+          <TimePicker use12Hours format="h:mm a" onChange={this.onChange} defaultOpenValue={moment('00:00:00', 'HH:mm:ss')} />
           <label style={{ padding: '0px 0px 0px 30px' }}>Date Range</label>
           <RangePicker />
         </Form.Group>
@@ -62,7 +62,7 @@ class EditNotificationForm extends Component {
           label='Description'
           placeholder='Enter medical instructions from provider'
         />
-        <Form.Field control={Button}>Update Notification</Form.Field>
+        <Form.Field control={Button} color='blue'>Update Notification</Form.Field>
       </Form>
     );
   }
