@@ -29,7 +29,7 @@ class App extends React.Component {
   render() {
     return (
       <Router>
-        <Container>
+        <div style={{ padding: '0em 5em 0em 5em' }}>
           <br/>
           <Header color='blue' as='h1'>Medical Tracker</Header>
           <NavBar/>
@@ -52,7 +52,7 @@ class App extends React.Component {
             <Route component={NotFound}/>
           </Switch>
           <Footer/>
-        </Container>
+        </div>
       </Router>
     );
   }
