@@ -11,8 +11,10 @@ class Landing extends React.Component {
 
         <Grid.Column width={8}>
           <h1>Please Log In</h1>
+          <Form size = 'large'>
           <Form.Button id="log in" content="Log In"/>
           <Link to="/login">Button will Link to Log In Page</Link>
+          </Form>
         </Grid.Column>
 
       </Grid>
