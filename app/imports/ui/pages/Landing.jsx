@@ -1,5 +1,5 @@
 import React from 'react';
-import { Form, Grid, Header, Message, Divider, Container } from 'semantic-ui-react';
+import { Form, Grid, Header, Message, Divider } from 'semantic-ui-react';
 import { Link, withRouter } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { Meteor } from 'meteor/meteor';
@@ -14,7 +14,7 @@ class Landing extends React.Component {
 
   render() {
     return (
-      <Container id="signin-page" className={'hospital-background'}>
+      <div className={'hospital-background'}>
         <br/>
         <br/>
         <div style={{ padding: '5em 2.5em 5em 2.5em' }}className='transparent-background'>
@@ -97,7 +97,7 @@ class Landing extends React.Component {
             }
           </Grid>
         </div>
-      </Container>
+      </div>
     );
   }
 }

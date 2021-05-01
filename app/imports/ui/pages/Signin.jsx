@@ -41,7 +41,7 @@ export default class Signin extends React.Component {
     }
     // Otherwise return the Login form.
     return (
-      <Container id="signin-page" className={'hospital-background'}>
+      <div className={'hospital-background'}>
         <br/>
         <br/>
         <br/>
@@ -97,7 +97,7 @@ export default class Signin extends React.Component {
             </Grid.Column>
           </Grid>
         </div>
-      </Container>
+      </div>
     );
   }
 }
