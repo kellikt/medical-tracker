@@ -54,7 +54,7 @@ export default class Signin extends React.Component {
               <Image src="images/RedCross.png"/>
             </Grid.Column>
             <Grid.Column style={{ padding: '0em 5em 0em 0em' }}>
-              <Form size='large' nSubmit={this.submit}>
+              <Form onSubmit={this.submit}>
                 <Segment stacked size='large'>
                   <Header as="h2" textAlign="center">
                   Login
